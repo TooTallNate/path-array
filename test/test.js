@@ -27,4 +27,28 @@ describe('PathArray', function () {
     assert.equal('/foo', p[0]);
     assert.equal('/bar', p[1]);
   });
+  it('should work for [n]= setter syntax', function () {
+    var env = { PATH: '/foo' + delimiter + '/bar' };
+    var p = new PathArray(env);
+    p[0] = '/baz';
+    assert.equal('/baz' + delimiter + '/bar', env.PATH);
+  });
+  it('should work with .push()', function () {
+    var env = { PATH: '/foo' + delimiter + '/bar' };
+    var p = new PathArray(env);
+    p.push('/baz');
+    assert.equal('/foo' + delimiter + '/bar' + delimiter + '/baz', env.PATH);
+  });
+  it('should work with .shift()', function () {
+    var env = { PATH: '/foo' + delimiter + '/bar' };
+    var p = new PathArray(env);
+    assert.equal('/foo', p.shift());
+    assert.equal('/bar', env.PATH);
+  });
+  it('should work with .pop()', function () {
+    var env = { PATH: '/foo' + delimiter + '/bar' };
+    var p = new PathArray(env);
+    assert.equal('/bar', p.pop());
+    assert.equal('/foo', env.PATH);
+  });
 });
