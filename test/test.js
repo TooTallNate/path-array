@@ -51,4 +51,10 @@ describe('PathArray', function () {
     assert.equal('/bar', p.pop());
     assert.equal('/foo', env.PATH);
   });
+  it('should work with .unshift()', function () {
+    var env = { PATH: '/foo' + delimiter + '/bar' };
+    var p = new PathArray(env);
+    p.unshift('/baz');
+    assert.equal('/baz' + delimiter + '/foo' + delimiter + '/bar', env.PATH);
+  });
 });
