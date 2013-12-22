@@ -21,4 +21,10 @@ describe('PathArray', function () {
     var p = new PathArray(env);
     assert.equal(p.toString(), env.PATH);
   });
+  it('should work for [n] getter syntax', function () {
+    var env = { PATH: '/foo' + delimiter + '/bar' };
+    var p = new PathArray(env);
+    assert.equal('/foo', p[0]);
+    assert.equal('/bar', p[1]);
+  });
 });

@@ -36,6 +36,10 @@ function PathArray (env) {
     enumerable: false,
     configurable: true
   });
+
+  // need to invoke the `length` getter to ensure that the
+  // indexed getters/setters are set up at this point
+  void(this.length);
 }
 
 // inherit from ArrayIndex
