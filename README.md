@@ -46,7 +46,7 @@ console.log(p);
 //   '/opt/X11/bin' ]
 
 // push another path entry. this function mutates the `process.env.PATH`
-p.push('/foo');
+p.unshift('/foo');
 
 console.log(process.env.PATH);
 // '/foo:./node_modules/.bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin'
