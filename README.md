@@ -1,7 +1,7 @@
 path-array
 ==========
 ### Treat your `$PATH` like a JavaScript Array
-[![Build Status](https://travis-ci.org/TooTallNate/node-path-array.png?branch=master)](https://travis-ci.org/TooTallNate/node-path-array)
+[![Build Status](https://travis-ci.org/TooTallNate/path-array.png?branch=master)](https://travis-ci.org/TooTallNate/path-array)
 
 This module provides a JavaScript `Array` implementation that is backed by your
 `$PATH` env variable. That is, you can use regular Array functions like `shift()`,
