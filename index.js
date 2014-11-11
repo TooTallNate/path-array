@@ -16,13 +16,16 @@ module.exports = PathArray;
 /**
  * `PathArray` constructor. Treat your `$PATH` like a mutable JavaScript Array!
  *
- * @param {Env} env `process.env` object to use. Should have a `PATH` property.
- * @api public
+ * @param {Env} env - `process.env` object to use.
+ * @param {String} [property] - optional property name to use (`PATH` by default).
+ * @public
  */
 
-function PathArray (env) {
+function PathArray (env, property) {
   if (!(this instanceof PathArray)) return new PathArray(env);
   ArrayIndex.call(this);
+
+  this.property = property || 'PATH';
 
   // overwrite only the `get` operator of the ".length" property
   Object.defineProperty(this, 'length', {
@@ -52,7 +55,7 @@ inherits(PathArray, ArrayIndex);
  */
 
 PathArray.prototype._array = function () {
-  var path = this._env.PATH;
+  var path = this._env[this.property];
   if (!path) return [];
   return path.split(delimiter);
 };
@@ -66,7 +69,7 @@ PathArray.prototype._array = function () {
 
 PathArray.prototype._setArray = function (arr) {
   // mutate the $PATH
-  this._env.PATH = arr.join(delimiter);
+  this._env[this.property] = arr.join(delimiter);
 };
 
 /**
@@ -115,10 +118,10 @@ PathArray.prototype.__set__ = function set (index, value) {
  */
 
 PathArray.prototype.toString = function toString () {
-  return this._env.PATH || '';
+  return this._env[this.property] || '';
 };
 
-// proxy the JavaScript Array functions, and mutate the $PATH 
+// proxy the JavaScript Array functions, and mutate the $PATH
 Object.getOwnPropertyNames(Array.prototype).forEach(function (name) {
   if ('constructor' == name) return;
   if ('function' != typeof Array.prototype[name]) return;

@@ -57,4 +57,12 @@ describe('PathArray', function () {
     p.unshift('/baz');
     assert.equal('/baz' + delimiter + '/foo' + delimiter + '/bar', env.PATH);
   });
+  it('should be able to specify property name to use with second argument', function () {
+    var env = { PYTHONPATH: '/foo' };
+    var p = new PathArray(env, 'PYTHONPATH');
+    assert.equal(1, p.length);
+    p.push('/baz');
+    assert.equal(2, p.length);
+    assert.equal('/foo' + delimiter + '/baz', env.PYTHONPATH);
+  });
 });
