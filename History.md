@@ -1,4 +1,10 @@
 
+1.0.0 / 2014-11-11
+==================
+
+  * index: add support for a configrable `property` name to use
+  * README: fix Travis badge
+
 0.0.2 / 2013-12-22
 ==================
 
