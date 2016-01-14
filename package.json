@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/TooTallNate/node-path-array",
   "dependencies": {
-    "array-index": "~0.1.0"
+    "array-index": "^1.0.0"
   },
   "devDependencies": {
     "mocha": "~1.16.1"
