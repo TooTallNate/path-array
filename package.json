@@ -1,6 +1,6 @@
 {
   "name": "path-array",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Treat your $PATH like a JavaScript Array",
   "main": "index.js",
   "scripts": {
