@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/TooTallNate/node-path-array.git"
+    "url": "git://github.com/TooTallNate/path-array.git"
   },
   "keywords": [
     "PATH",
@@ -18,9 +18,9 @@
   "author": "Nathan Rajlich <nathan@tootallnate.net> (http://n8.io/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/TooTallNate/node-path-array/issues"
+    "url": "https://github.com/TooTallNate/path-array/issues"
   },
-  "homepage": "https://github.com/TooTallNate/node-path-array",
+  "homepage": "https://github.com/TooTallNate/path-array",
   "dependencies": {
     "array-index": "^1.0.0"
   },
